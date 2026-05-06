@@ -1,0 +1,44 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+        "accessible": {
+            "type": "boolean"
+        },
+        "description": {
+            "type": "string"
+        },
+        "features": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "image": {
+            "type": "string"
+        },
+        "roomName": {
+            "type": "string"
+        },
+        "roomPrice": {
+            "type": "number"
+        },
+        "roomid": {
+            "type": "integer"
+        },
+        "type": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "accessible",
+        "description",
+        "features",
+        "image",
+        "roomName",
+        "roomPrice",
+        "roomid",
+        "type"
+    ],
+    "additionalProperties": false
+}
