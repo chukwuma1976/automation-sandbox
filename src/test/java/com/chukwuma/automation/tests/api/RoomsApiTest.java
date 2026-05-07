@@ -33,4 +33,16 @@ public class RoomsApiTest extends BaseApiTest {
                 .statusCode(200)
                 .assertThat().body(matchesJsonSchemaInClasspath("room-schema.json"));
     }
+
+    @Test
+    public void getRoomByInvalidId() {
+        given()
+                .baseUri(API_URL)
+                .pathParam("id", 99999) // Assuming this ID does not exist
+                .when()
+                .get("/api/room/{id}")
+                .then()
+                .statusCode(500); // The API returns 500 for non-existent room IDs, which is not ideal but we are
+                                  // testing based on the current behavior
+    }
 }

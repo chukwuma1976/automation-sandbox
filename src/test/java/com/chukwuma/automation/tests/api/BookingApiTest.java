@@ -43,6 +43,17 @@ public class BookingApiTest extends BaseApiTest {
         }
 
         @Test
+        public void getBookingByInvalidId() {
+                given()
+                                .baseUri(API_URL)
+                                .pathParam("id", 99999) // Assuming this ID does not exist
+                                .when()
+                                .get("/booking/{id}")
+                                .then()
+                                .statusCode(404);
+        }
+
+        @Test
         public void createBooking() {
                 Booking bookingPayload = TestDataGenerator.createBooking();
                 Response response = given()
