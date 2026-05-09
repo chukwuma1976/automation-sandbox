@@ -15,7 +15,7 @@ import static org.hamcrest.Matchers.equalTo;
 public class SendMessageApiTest extends BaseApiTest {
     private String API_URL = ConfigReader.get("BASE_API_URL_2");
 
-    @Test
+    @Test(groups = { "api", "regression" })
     public void sendAMessage() {
 
         Map<String, String> messagePayload = TestDataGenerator.messagePayload();

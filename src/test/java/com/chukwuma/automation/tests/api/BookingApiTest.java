@@ -18,7 +18,7 @@ import static org.hamcrest.Matchers.equalTo;
 public class BookingApiTest extends BaseApiTest {
         private String API_URL = ConfigReader.get("BASE_API_URL");
 
-        @Test
+        @Test(groups = { "api", "smoke" })
         void getBookingIds() {
                 given()
                                 .baseUri(API_URL)
@@ -29,7 +29,7 @@ public class BookingApiTest extends BaseApiTest {
                                 .extract().response();
         }
 
-        @Test
+        @Test(groups = { "api", "regression" })
         public void getBookingById() {
                 int bookingId = extractBookingId(); // Get an existing booking ID for testing
                 given()
@@ -42,7 +42,7 @@ public class BookingApiTest extends BaseApiTest {
                                 .assertThat().body(matchesJsonSchemaInClasspath("reservation-schema.json"));
         }
 
-        @Test
+        @Test(groups = { "api", "regression" })
         public void getBookingByInvalidId() {
                 given()
                                 .baseUri(API_URL)
@@ -53,7 +53,7 @@ public class BookingApiTest extends BaseApiTest {
                                 .statusCode(404);
         }
 
-        @Test
+        @Test(groups = { "api", "smoke" })
         public void createBooking() {
                 Booking bookingPayload = TestDataGenerator.createBooking();
                 Response response = given()
@@ -76,7 +76,7 @@ public class BookingApiTest extends BaseApiTest {
 
         }
 
-        @Test
+        @Test(groups = { "api", "regression" })
         public void updateBooking() {
                 // First, create a booking to update
                 Booking bookingPayload = TestDataGenerator.createBooking();
@@ -110,7 +110,7 @@ public class BookingApiTest extends BaseApiTest {
                 deleteBooking(bookingId, token);
         }
 
-        @Test
+        @Test(groups = { "api", "regression" })
         public void partiallyUpdateBooking() {
                 // First, create a booking to update
                 Booking bookingPayload = TestDataGenerator.createBooking();

@@ -25,6 +25,16 @@ public class TestDataGenerator {
         return booking;
     }
 
+    public static Map<String, String> createUIBookingData() {
+        Map<String, String> bookingData = new HashMap<>();
+        bookingData.put("firstname", "John");
+        bookingData.put("lastname", "Doe");
+        bookingData.put("email", "john.doe@example.com");
+        bookingData.put("phone", "123-456-7890");
+
+        return bookingData;
+    }
+
     public static Map<String, String> messagePayload() {
         Map<String, String> messagePayload = new HashMap<>();
 

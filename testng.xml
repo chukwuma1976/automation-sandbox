@@ -13,6 +13,8 @@
     <test name="UI Tests">
         <classes>
             <class name="com.chukwuma.automation.tests.ui.LoginTest"/>
+            <class name="com.chukwuma.automation.tests.ui.BookingTest"/>
+            <class name="com.chukwuma.automation.tests.ui.SendMessageTest"/>
         </classes>
     </test>
 </suite>

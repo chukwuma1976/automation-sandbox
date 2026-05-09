@@ -11,7 +11,7 @@ import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInC
 public class RoomsApiTest extends BaseApiTest {
     private String API_URL = ConfigReader.get("BASE_API_URL_2");
 
-    @Test
+    @Test(groups = { "api", "smoke" })
     public void getRooms() {
         given()
                 .baseUri(API_URL)
@@ -22,7 +22,7 @@ public class RoomsApiTest extends BaseApiTest {
                 .extract().response();
     }
 
-    @Test
+    @Test(groups = { "api", "regression" })
     public void getRoomById() {
         given()
                 .baseUri(API_URL)
@@ -34,7 +34,7 @@ public class RoomsApiTest extends BaseApiTest {
                 .assertThat().body(matchesJsonSchemaInClasspath("room-schema.json"));
     }
 
-    @Test
+    @Test(groups = { "api", "regression" })
     public void getRoomByInvalidId() {
         given()
                 .baseUri(API_URL)
