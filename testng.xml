@@ -6,12 +6,13 @@
             <class name="com.chukwuma.automation.tests.api.BookingApiTest"/>
             <class name="com.chukwuma.automation.tests.api.RoomsApiTest"/>
             <class name="com.chukwuma.automation.tests.api.SendMessageApiTest"/>
+            <class name="com.chukwuma.automation.tests.api.HealthCheckApiTest"/>
             <class name="com.chukwuma.automation.tests.integration.runners.BookingIntegrationTest"/>
         </classes>
     </test>
     <test name="UI Tests">
         <classes>
-            <class name="com.chukwuma.automation.tests.ui.UITest"/>
+            <class name="com.chukwuma.automation.tests.ui.LoginTest"/>
         </classes>
     </test>
 </suite>

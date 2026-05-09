@@ -1,5 +1,8 @@
 package com.chukwuma.automation.utils;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.chukwuma.automation.models.Booking;
 import com.chukwuma.automation.models.BookingDates;
 
@@ -20,6 +23,18 @@ public class TestDataGenerator {
         booking.setAdditionalneeds("Breakfast");
 
         return booking;
+    }
+
+    public static Map<String, String> messagePayload() {
+        Map<String, String> messagePayload = new HashMap<>();
+
+        messagePayload.put("name", "Paul Uzoma");
+        messagePayload.put("email", "paul.uzoma@gmail.com");
+        messagePayload.put("phone", "(800) 123-4567");
+        messagePayload.put("subject", "Thank you");
+        messagePayload.put("description", "Thank you for allowing me to do API testing using RestAssured");
+
+        return messagePayload;
     }
 
 }
