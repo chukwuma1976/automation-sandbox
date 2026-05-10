@@ -27,7 +27,7 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                sh 'mvn test -DsuiteXmlFile=testng.xml'
+                sh 'mvn clean test -Dgroups=api'
             }
         }
 
