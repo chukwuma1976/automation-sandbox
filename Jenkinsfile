@@ -13,7 +13,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/chukwuma1976/automation-sandbox.git'
+                git branch: 'main',
+                    url: 'https://github.com/chukwuma1976/automation-sandbox.git'
             }
         }
 
