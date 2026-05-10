@@ -8,6 +8,7 @@ pipeline {
 
     environment {
         ENV = 'qa'
+        CI = 'true'
     }
 
     stages {

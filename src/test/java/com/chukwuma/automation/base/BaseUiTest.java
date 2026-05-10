@@ -14,7 +14,10 @@ public class BaseUiTest {
     @BeforeMethod(alwaysRun = true)
     public void setUp() {
 
-        boolean isCI = System.getenv("CI") != null;
+        boolean isCI = Boolean.parseBoolean(System.getenv("CI"));
+
+        System.out.println("CI = " + System.getenv("CI"));
+        System.out.println("isCI = " + isCI);
 
         ChromeOptions options = new ChromeOptions();
 
