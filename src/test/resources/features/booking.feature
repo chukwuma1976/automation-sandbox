@@ -1,5 +1,6 @@
 Feature: Booking API Integration Tests
 
+    @api
     Scenario: Create, Edit, Retrieve, Delete Booking
         Given I have a booking request payload
         When I send a POST request to create a booking
@@ -10,7 +11,8 @@ Feature: Booking API Integration Tests
         Then the booking details should match the updated payload
         And should be able to retrieve updated booking request
         Then delete booking request
-        
+
+    @api    
     Scenario: Create, Retrieve, Delete Booking
         Given I have a booking request payload
         When I send a POST request to create a booking
