@@ -25,7 +25,7 @@ public class AuthApiTest extends BaseApiTest {
     }
 
     @Test(groups = { "api", "smoke" })
-    void login() {
+    public void login() {
         given()
                 .baseUri(API_URL)
                 .headers("Content-Type", "application/json")
@@ -37,7 +37,7 @@ public class AuthApiTest extends BaseApiTest {
     }
 
     @Test(dataProvider = "invalidCredentials", groups = { "api", "regression" })
-    void loginWithInvalidCredentials(String username, String password) {
+    public void loginWithInvalidCredentials(String username, String password) {
         given()
                 .baseUri(API_URL)
                 .headers("Content-Type", "application/json")

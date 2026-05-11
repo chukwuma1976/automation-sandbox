@@ -19,23 +19,20 @@ public class BaseApiTest {
 
     @BeforeClass
     public static void setup() {
-        // RestAssured.baseURI = ApiConfig.BASE_URL;
-
         // Attach Allure filter globally for reporting
         Filter allureFilter = new AllureRestAssured();
-
         RestAssured.filters(allureFilter);
     }
 
-    @BeforeMethod
-    void beforeEach(ITestResult testInfo) {
+    @BeforeMethod(alwaysRun = true)
+    public void beforeEach(ITestResult testInfo) {
         startTime = System.currentTimeMillis();
         MDC.put("testName", testInfo.getMethod().getMethodName());
         log.info("========== START TEST ==========");
     }
 
-    @AfterMethod
-    void afterEach(ITestResult testInfo) {
+    @AfterMethod(alwaysRun = true)
+    public void afterEach(ITestResult testInfo) {
         long duration = System.currentTimeMillis() - startTime;
         log.info("========== END TEST ({} ms) ==========", duration);
         MDC.clear();

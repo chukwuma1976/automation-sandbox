@@ -1,5 +1,6 @@
 package com.chukwuma.automation.utils;
 
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -45,6 +46,15 @@ public class TestDataGenerator {
         messagePayload.put("description", "Thank you for allowing me to do API testing using RestAssured");
 
         return messagePayload;
+    }
+
+    public static String getTestFilePath(String fileName) {
+        return Paths.get(
+                System.getProperty("user.dir"),
+                "src",
+                "test",
+                "resources",
+                fileName).toAbsolutePath().toString();
     }
 
 }

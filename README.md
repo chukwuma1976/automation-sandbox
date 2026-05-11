@@ -12,3 +12,6 @@ http://localhost:8080
 
 Stop Jenkins (Optional)
 docker stop jenkins
+
+mvn allure:report
+mvn allure:serve
