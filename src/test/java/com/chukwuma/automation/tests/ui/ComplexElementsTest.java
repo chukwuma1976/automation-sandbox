@@ -36,7 +36,7 @@ public class ComplexElementsTest extends BaseUiTest {
 
         By checkOutButtonLocator = By.xpath("//button[text()='Checkout here']");
         Actions actions = new Actions(driver);
-        actions.moveToElement(driver.findElement(checkOutButtonLocator)).perform();
+        actions.moveToElement(driver.findElement(checkOutButtonLocator)).build().perform();
 
         By testCaseSelection = By.xpath("//a[text()='Try TestCase Studio']");
         WebElement option3 = driver.findElement(testCaseSelection);
