@@ -4,10 +4,12 @@ import org.testng.annotations.Test;
 
 import com.chukwuma.automation.base.BaseUiTest;
 import com.chukwuma.automation.config.ConfigReader;
+import com.chukwuma.automation.page.AnotherIFramePage;
 import com.chukwuma.automation.page.IFramePage;
 
 public class IFrameTest extends BaseUiTest {
     String UI_URL = ConfigReader.get("SELECTORS_HUB_BASE_URL") + "/iframe-scenario/";
+    String UI_URL_2 = ConfigReader.get("PRACTICE_AUTOMATION_URL") + "/iframes/";
 
     @Test(groups = { "ui", "regression" })
     public void testIFrameInteraction() {
@@ -32,6 +34,16 @@ public class IFrameTest extends BaseUiTest {
 
         // Switch back to the main content
         driver.switchTo().defaultContent();
+    }
+
+    @Test(groups = { "ui", "regression" })
+    public void testIFrameInteraction2() {
+        AnotherIFramePage anotherIFramePage = new AnotherIFramePage();
+
+        anotherIFramePage.navigateToIFramePage(driver);
+
+        anotherIFramePage.interactWithIFrame1(driver);
+        anotherIFramePage.interactWithIFrame2(driver);
     }
 
 }
