@@ -70,6 +70,7 @@ public class BookingApiTest extends BaseApiTest {
 
                 int bookingId = response.jsonPath().getInt("bookingid"); // Extract the created booking ID
                 String token = extractToken(); // Extract token for cleanup
+                System.out.println("Response time is " + response.time()); // Checking response time
 
                 // Cleanup: Delete the created booking and test the delete endpoint
                 deleteBooking(bookingId, token);
