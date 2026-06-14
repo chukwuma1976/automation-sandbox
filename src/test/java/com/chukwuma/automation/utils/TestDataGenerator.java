@@ -57,4 +57,14 @@ public class TestDataGenerator {
                 fileName).toAbsolutePath().toString();
     }
 
+    public static Map<String, String> createUserProfile() {
+        Map<String, String> userProfile = new HashMap<>();
+
+        userProfile.put("name", "Tester" + System.currentTimeMillis());
+        userProfile.put("email", userProfile.get("name") + "@gmail.com");
+        userProfile.put("password", "Pwd" + System.currentTimeMillis());
+
+        return userProfile;
+    }
+
 }
